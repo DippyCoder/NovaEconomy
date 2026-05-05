@@ -1,0 +1,57 @@
+prefix:
+  eco: "<dark_gray>[<gold>⚡</gold><dark_gray>]<reset>"
+
+# ── General ───────────────────────────────────────────────────────────────────
+general:
+  no-permission: "<prefix_eco> <gray>Je hebt geen toestemming hiervoor."
+  player-only: "<prefix_eco> <gray>Alleen spelers kunnen dit commando gebruiken."
+  player-not-found: "<prefix_eco> <gray>Speler <green><bold><player></bold></green> <gray>is niet gevonden."
+  invalid-number: "<prefix_eco> <gray><green><bold><value></bold></green> <gray>is geen geldig getal."
+  invalid-args: "<prefix_eco> <gray>Gebruik: <green><bold><usage></bold></green>"
+  command-disabled: "<prefix_eco> <gray>Dit commando is momenteel uitgeschakeld."
+  reload-done: "<prefix_eco> <gray>Plugin succesvol herladen."
+
+novaeco:
+  check-enabled: "<prefix_eco> <gray>Update-controle <green><bold>ingeschakeld</bold></green><gray>."
+  check-disabled: "<prefix_eco> <gray>Update-controle <green><bold>uitgeschakeld</bold></green><gray>."
+
+# ── Balance ───────────────────────────────────────────────────────────────────
+balance:
+  own: "<prefix_eco> <gray>Jouw <green><bold><currency></bold></green><gray>-saldo: <green><bold><amount></bold></green><gray>."
+  other: "<prefix_eco> <gray><green><bold><player></bold></green><gray>'s <green><bold><currency></bold></green><gray>-saldo: <green><bold><amount></bold></green><gray>."
+
+# ── Economy Admin ─────────────────────────────────────────────────────────────
+eco:
+  set: "<prefix_eco> <gray>Het <green><bold><currency></bold></green><gray>-saldo van <green><bold><player></bold></green> <gray>is ingesteld op <green><bold><amount></bold></green><gray>."
+  give: "<prefix_eco> <gray><green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>gegeven aan <green><bold><player></bold></green><gray>."
+  take: "<prefix_eco> <gray><green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>afgenomen van <green><bold><player></bold></green><gray>."
+  reset: "<prefix_eco> <gray>Het <green><bold><currency></bold></green><gray>-saldo van <green><bold><player></bold></green> <gray>is teruggezet naar de standaard."
+  max-balance: "<prefix_eco> <gray>Dat bedrag zou het maximale saldo voor <green><bold><currency></bold></green> <gray>overschrijden."
+
+# ── Currency ──────────────────────────────────────────────────────────────────
+currency:
+  added: "<prefix_eco> <gray>Valuta <green><bold><currency></bold></green> <gray>is aangemaakt."
+  removed: "<prefix_eco> <gray>Valuta <green><bold><currency></bold></green> <gray>is verwijderd."
+  already-exists: "<prefix_eco> <gray>Valuta <green><bold><currency></bold></green> <gray>bestaat al."
+  not-found: "<prefix_eco> <gray>Valuta <green><bold><currency></bold></green> <gray>bestaat niet."
+  config-protected: "<prefix_eco> <gray>Valuta <green><bold><currency></bold></green> <gray>is gedefinieerd in de configuratie en kan hier niet worden verwijderd."
+  list-header: "<dark_aqua>── <aqua>Valuta's</aqua> ──"
+  list-entry: "<dark_gray> • <green><bold><name></bold></green> <dark_gray>(<gray><display></gray><dark_gray>)"
+  list-empty: "<prefix_eco> <gray>Geen valuta's gedefinieerd."
+
+# ── Pay ───────────────────────────────────────────────────────────────────────
+pay:
+  sent: "<prefix_eco> <gray><green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>verzonden naar <green><bold><player></bold></green><gray>."
+  received: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>heeft je <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>gestuurd."
+  insufficient-funds: "<prefix_eco> <gray>Je hebt niet genoeg <green><bold><currency></bold></green><gray>."
+  self-pay: "<prefix_eco> <gray>Je kunt niet aan jezelf betalen."
+  min-amount: "<prefix_eco> <gray>De minimale betaling is <green><bold><amount></bold></green><gray>."
+  tax-info: "<prefix_eco> <gray>(Er is een belasting van <green><bold><tax></bold></green> <gray>afgetrokken van jouw betaling.)"
+
+# ── Baltop ────────────────────────────────────────────────────────────────────
+baltop:
+  header: "<dark_aqua>── <aqua>Topbalansen</aqua> · <green><bold><currency></bold></green> <dark_aqua>──"
+  entry: "<dark_gray> <rank>. <green><bold><player></bold></green> <dark_gray>— <green><bold><amount></bold></green>"
+  footer: "<dark_aqua>── <gray>Pagina <green><bold><page></bold></green><gray>/<green><bold><pages></bold></green> <dark_aqua>──"
+  empty: "<prefix_eco> <gray>Geen saldogegevens voor <green><bold><currency></bold></green><gray>."
+  invalid-page: "<prefix_eco> <gray>Ongeldig paginanummer."

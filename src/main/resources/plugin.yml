@@ -1,0 +1,117 @@
+name: NovaEconomy
+version: '${version}'
+main: com.dippycoder.novaEconomy.NovaEconomy
+api-version: '1.21'
+description: A modern economy plugin for Paper 1.21+ servers.
+authors:
+  - DippyCoder
+
+dependencies:
+  server:
+    Vault:
+      load: BEFORE
+      required: false
+      join-classpath: false
+    VaultUnlocked:
+      load: BEFORE
+      required: false
+      join-classpath: false
+    PlaceholderAPI:
+      load: BEFORE
+      required: false
+      join-classpath: false
+
+commands:
+  novaeconomy:
+    description: NovaEconomy plugin info and management.
+    usage: /novaeconomy [version|reload|help]
+    aliases: [ novaeco ]
+    permission: novaeco.cmd.novaeco
+    default: op
+  eco:
+    description: Economy administration.
+    usage: /eco <currency|set|give|take|reset|top|help>
+    permission: novaeco.cmd.eco
+  balance:
+    description: Check your or another player's balance.
+    usage: /balance [player] [currency]
+    aliases: [ bal, money ]
+    permission: novaeco.cmd.balance
+    default: true
+  baltop:
+    description: Show the richest players.
+    usage: /baltop [currency] [page]
+    aliases: [ balancetop, etop ]
+    permission: novaeco.cmd.baltop
+    default: true
+  pay:
+    description: Pay another player.
+    usage: /pay <player> <amount> [currency]
+    permission: novaeco.cmd.pay
+    default: true
+
+permissions:
+  novaeco.*:
+    description: All NovaEconomy permissions.
+    default: op
+    children:
+      novaeco.cmd.novaeco: true
+      novaeco.cmd.novaeco.reload: true
+      novaeco.cmd.eco: true
+      novaeco.cmd.eco.currency: true
+      novaeco.cmd.eco.set: true
+      novaeco.cmd.eco.give: true
+      novaeco.cmd.eco.take: true
+      novaeco.cmd.eco.reset: true
+      novaeco.cmd.eco.top: true
+      novaeco.cmd.balance: true
+      novaeco.cmd.balance.other: true
+      novaeco.cmd.baltop: true
+      novaeco.cmd.pay: true
+      novaeco.pay.bypass-tax: true
+      novaeco.pay.self: true
+  novaeco.cmd.novaeco:
+    description: Access to /novaeconomy.
+    default: op
+  novaeco.cmd.novaeco.reload:
+    description: Reload the plugin via /novaeconomy reload.
+    default: op
+  novaeco.cmd.eco:
+    description: Access to /eco.
+    default: op
+  novaeco.cmd.eco.currency:
+    description: Manage currencies.
+    default: op
+  novaeco.cmd.eco.set:
+    description: Set a player's balance.
+    default: op
+  novaeco.cmd.eco.give:
+    description: Give a player money.
+    default: op
+  novaeco.cmd.eco.take:
+    description: Take money from a player.
+    default: op
+  novaeco.cmd.eco.reset:
+    description: Reset a player's balance.
+    default: op
+  novaeco.cmd.eco.top:
+    description: View balance leaderboard.
+    default: op
+  novaeco.cmd.balance:
+    description: Check own balance.
+    default: true
+  novaeco.cmd.balance.other:
+    description: Check another player's balance.
+    default: op
+  novaeco.cmd.baltop:
+    description: View top balances.
+    default: true
+  novaeco.cmd.pay:
+    description: Pay another player.
+    default: true
+  novaeco.pay.bypass-tax:
+    description: Pay without tax deduction.
+    default: op
+  novaeco.pay.self:
+    description: Pay yourself (if self-pay is enabled).
+    default: false

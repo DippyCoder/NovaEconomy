@@ -1,0 +1,57 @@
+prefix:
+  eco: "<dark_gray>[<gold>⚡</gold><dark_gray>]<reset>"
+
+# ── General ───────────────────────────────────────────────────────────────────
+general:
+  no-permission: "<prefix_eco> <gray>Bunu yapmak için izniniz yok."
+  player-only: "<prefix_eco> <gray>Bu komutu yalnızca oyuncular kullanabilir."
+  player-not-found: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>oyuncusu bulunamadı."
+  invalid-number: "<prefix_eco> <gray><green><bold><value></bold></green> <gray>geçerli bir sayı değil."
+  invalid-args: "<prefix_eco> <gray>Kullanım: <green><bold><usage></bold></green>"
+  command-disabled: "<prefix_eco> <gray>Bu komut şu anda devre dışı."
+  reload-done: "<prefix_eco> <gray>Eklenti başarıyla yeniden yüklendi."
+
+novaeco:
+  check-enabled: "<prefix_eco> <gray>Güncelleme kontrolü <green><bold>etkin</bold></green><gray>."
+  check-disabled: "<prefix_eco> <gray>Güncelleme kontrolü <green><bold>devre dışı</bold></green><gray>."
+
+# ── Balance ───────────────────────────────────────────────────────────────────
+balance:
+  own: "<prefix_eco> <gray><green><bold><currency></bold></green> <gray>bakiyeniz: <green><bold><amount></bold></green><gray>."
+  other: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>adlı oyuncunun <green><bold><currency></bold></green> <gray>bakiyesi: <green><bold><amount></bold></green><gray>."
+
+# ── Economy Admin ─────────────────────────────────────────────────────────────
+eco:
+  set: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>adlı oyuncunun <green><bold><currency></bold></green> <gray>bakiyesi <green><bold><amount></bold></green> <gray>olarak ayarlandı."
+  give: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>adlı oyuncuya <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>verildi."
+  take: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>adlı oyuncudan <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>alındı."
+  reset: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>adlı oyuncunun <green><bold><currency></bold></green> <gray>bakiyesi varsayılana sıfırlandı."
+  max-balance: "<prefix_eco> <gray>Bu miktar <green><bold><currency></bold></green> <gray>için maksimum bakiyeyi aşıyor."
+
+# ── Currency ──────────────────────────────────────────────────────────────────
+currency:
+  added: "<prefix_eco> <gray><green><bold><currency></bold></green> <gray>para birimi oluşturuldu."
+  removed: "<prefix_eco> <gray><green><bold><currency></bold></green> <gray>para birimi kaldırıldı."
+  already-exists: "<prefix_eco> <gray><green><bold><currency></bold></green> <gray>para birimi zaten mevcut."
+  not-found: "<prefix_eco> <gray><green><bold><currency></bold></green> <gray>para birimi mevcut değil."
+  config-protected: "<prefix_eco> <gray><green><bold><currency></bold></green> <gray>para birimi yapılandırmada tanımlı ve buradan kaldırılamaz."
+  list-header: "<dark_aqua>── <aqua>Para Birimleri</aqua> ──"
+  list-entry: "<dark_gray> • <green><bold><name></bold></green> <dark_gray>(<gray><display></gray><dark_gray>)"
+  list-empty: "<prefix_eco> <gray>Tanımlı para birimi yok."
+
+# ── Pay ───────────────────────────────────────────────────────────────────────
+pay:
+  sent: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>adlı oyuncuya <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>gönderildi."
+  received: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>size <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>gönderdi."
+  insufficient-funds: "<prefix_eco> <gray>Yeterli <green><bold><currency></bold></green> <gray>bakiyeniz yok."
+  self-pay: "<prefix_eco> <gray>Kendinize ödeme yapamazsınız."
+  min-amount: "<prefix_eco> <gray>Minimum ödeme miktarı <green><bold><amount></bold></green><gray>."
+  tax-info: "<prefix_eco> <gray>(Ödemenizden <green><bold><tax></bold></green> <gray>vergi kesildi.)"
+
+# ── Baltop ────────────────────────────────────────────────────────────────────
+baltop:
+  header: "<dark_aqua>── <aqua>En Yüksek Bakiyeler</aqua> · <green><bold><currency></bold></green> <dark_aqua>──"
+  entry: "<dark_gray> <rank>. <green><bold><player></bold></green> <dark_gray>— <green><bold><amount></bold></green>"
+  footer: "<dark_aqua>── <gray>Sayfa <green><bold><page></bold></green><gray>/<green><bold><pages></bold></green> <dark_aqua>──"
+  empty: "<prefix_eco> <gray><green><bold><currency></bold></green> <gray>için bakiye verisi yok."
+  invalid-page: "<prefix_eco> <gray>Geçersiz sayfa numarası."

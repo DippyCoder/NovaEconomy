@@ -1,0 +1,111 @@
+# ============================================================
+#   NovaEconomy Configuration
+#   GitHub: https://github.com/DippyCoder/NovaEconomy
+# ============================================================
+general:
+  # Language file to use (matches a file in messages/ folder, e.g. "en" -> messages/en.yml)
+  language: en
+  # Enable debug logging
+  debug: false
+  check-for-updates: true
+
+# ============================================================
+#   Permission Overrides
+#   Rename any permission node. Leave a key out to use the default.
+#   Default prefix is "novaeco." (e.g. novaeco.cmd.pay)
+#   Example: cmd.pay: "mynetwork.pay"
+# ============================================================
+permissions:
+  #cmd.balance: "mynetwork.balance"
+  #cmd.pay: "mynetwork.pay"
+
+# ============================================================
+#   Economy
+# ============================================================
+economy:
+  # The currency used by default when no currency is specified.
+  default-currency: COINS
+
+  # Format large numbers as shorthand: 1500 → 1.5k, 1500000 → 1.5m
+  short-amount-formatting: true
+
+# ============================================================
+#   Chat
+# ============================================================
+chat:
+  small-caps:
+    enabled: true
+    require-permission: false
+
+# ============================================================
+#   Pay
+# ============================================================
+pay:
+  # Minimum amount allowed per /pay transaction.
+  min-amount: 1.0
+
+  # Tax percentage deducted from the sender (0.0 = no tax, 10.0 = 10%).
+  tax: 0.0
+
+  # Allow players to pay themselves.
+  self-pay: false
+
+# ============================================================
+#   Vault
+# ============================================================
+vault:
+  # Which Vault implementation(s) to register.
+  # VAULT         - standard Vault Economy (single currency, widest compatibility)
+  # VAULT_UNLOCKED - VaultUnlocked Economy (multi-currency, requires VaultUnlocked)
+  # BOTH          - register both providers simultaneously
+  mode: BOTH
+
+  # Which currency the standard Vault provider maps to.
+  currency: COINS
+
+# ============================================================
+#   Database
+# ============================================================
+database:
+  # Storage backend to use: SQLITE, MYSQL, REDIS
+  type: SQLITE
+
+  # MySQL / MariaDB settings (only used when type: MYSQL)
+  mysql:
+    host: localhost
+    port: 3306
+    database: novaeconomy
+    username: root
+    password: ""
+    pool-size: 10
+    connection-timeout: 30000
+
+  # Redis settings (only used when type: REDIS)
+  # Note: Redis stores balances in memory — pair with a persistent MySQL/SQLite
+  # backend or enable Redis persistence (AOF/RDB) to survive restarts.
+  redis:
+    host: localhost
+    port: 6379
+    password: ""
+    # Redis logical database index (0–15)
+    database: 0
+    # Prefix applied to all keys written by NovaEconomy
+    key-prefix: "novaeconomy"
+    pool-size: 10
+
+# ============================================================
+#   Currencies
+# ============================================================
+# Each entry below defines a built-in currency.
+# Currencies created with /eco currency add are stored in the database.
+currencies:
+  COINS:
+    display-name: "Coins"
+    symbol: "$"
+    singular: "Coin"
+    plural: "Coins"
+    default-balance: 0.0
+    # Maximum digits after the decimal point (0–8).
+    decimals: 2
+    # Maximum balance. -1 means unlimited.
+    max-balance: -1

@@ -1,0 +1,107 @@
+# ============================================================
+#   NovaEconomy — Discord Webhooks
+#   Set enabled: true and fill in webhook-url to activate.
+#
+#   Embed placeholders:
+#     {player} {currency} {amount} {actor}
+#     {sender} {receiver} (pay only)
+#
+#   Colors are hex RGB without the # sign.
+# ============================================================
+
+enabled: false
+
+# Paste your Discord webhook URL here
+webhook-url: ""
+
+# Toggle individual event types
+events:
+  set: true
+  give: true
+  take: true
+  reset: true
+  pay: false
+
+# ── Embed content ─────────────────────────────────────────
+embeds:
+  set:
+    title: "💰 Balance Set"
+    color: "F0A500"
+    fields:
+      - name: "Player"
+        value: "{player}"
+        inline: true
+      - name: "Currency"
+        value: "{currency}"
+        inline: true
+      - name: "New Balance"
+        value: "{amount}"
+        inline: true
+      - name: "Set by"
+        value: "{actor}"
+        inline: true
+
+  give:
+    title: "➕ Balance Given"
+    color: "57F287"
+    fields:
+      - name: "Player"
+        value: "{player}"
+        inline: true
+      - name: "Currency"
+        value: "{currency}"
+        inline: true
+      - name: "Amount"
+        value: "{amount}"
+        inline: true
+      - name: "Given by"
+        value: "{actor}"
+        inline: true
+
+  take:
+    title: "➖ Balance Taken"
+    color: "ED4245"
+    fields:
+      - name: "Player"
+        value: "{player}"
+        inline: true
+      - name: "Currency"
+        value: "{currency}"
+        inline: true
+      - name: "Amount"
+        value: "{amount}"
+        inline: true
+      - name: "Taken by"
+        value: "{actor}"
+        inline: true
+
+  reset:
+    title: "🔄 Balance Reset"
+    color: "5865F2"
+    fields:
+      - name: "Player"
+        value: "{player}"
+        inline: true
+      - name: "Currency"
+        value: "{currency}"
+        inline: true
+      - name: "Reset by"
+        value: "{actor}"
+        inline: true
+
+  pay:
+    title: "💸 Payment"
+    color: "57F287"
+    fields:
+      - name: "From"
+        value: "{sender}"
+        inline: true
+      - name: "To"
+        value: "{receiver}"
+        inline: true
+      - name: "Currency"
+        value: "{currency}"
+        inline: true
+      - name: "Amount"
+        value: "{amount}"
+        inline: true

@@ -1,0 +1,57 @@
+prefix:
+  eco: "<dark_gray>[<gold>⚡</gold><dark_gray>]<reset>"
+
+# ── General ───────────────────────────────────────────────────────────────────
+general:
+  no-permission: "<prefix_eco> <gray>У вас нет разрешения на это."
+  player-only: "<prefix_eco> <gray>Только игроки могут использовать эту команду."
+  player-not-found: "<prefix_eco> <gray>Игрок <green><bold><player></bold></green> <gray>не найден."
+  invalid-number: "<prefix_eco> <gray><green><bold><value></bold></green> <gray>не является допустимым числом."
+  invalid-args: "<prefix_eco> <gray>Использование: <green><bold><usage></bold></green>"
+  command-disabled: "<prefix_eco> <gray>Эта команда в данный момент отключена."
+  reload-done: "<prefix_eco> <gray>Плагин успешно перезагружен."
+
+novaeco:
+  check-enabled: "<prefix_eco> <gray>Проверка обновлений <green><bold>включена</bold></green><gray>."
+  check-disabled: "<prefix_eco> <gray>Проверка обновлений <green><bold>отключена</bold></green><gray>."
+
+# ── Balance ───────────────────────────────────────────────────────────────────
+balance:
+  own: "<prefix_eco> <gray>Ваш баланс <green><bold><currency></bold></green><gray>: <green><bold><amount></bold></green><gray>."
+  other: "<prefix_eco> <gray>Баланс <green><bold><currency></bold></green> <gray>игрока <green><bold><player></bold></green><gray>: <green><bold><amount></bold></green><gray>."
+
+# ── Economy Admin ─────────────────────────────────────────────────────────────
+eco:
+  set: "<prefix_eco> <gray>Баланс <green><bold><currency></bold></green> <gray>игрока <green><bold><player></bold></green> <gray>установлен на <green><bold><amount></bold></green><gray>."
+  give: "<prefix_eco> <gray>Выдано <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>игроку <green><bold><player></bold></green><gray>."
+  take: "<prefix_eco> <gray>Снято <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>у игрока <green><bold><player></bold></green><gray>."
+  reset: "<prefix_eco> <gray>Баланс <green><bold><currency></bold></green> <gray>игрока <green><bold><player></bold></green> <gray>сброшен до значения по умолчанию."
+  max-balance: "<prefix_eco> <gray>Эта сумма превысит максимальный баланс для <green><bold><currency></bold></green><gray>."
+
+# ── Currency ──────────────────────────────────────────────────────────────────
+currency:
+  added: "<prefix_eco> <gray>Валюта <green><bold><currency></bold></green> <gray>создана."
+  removed: "<prefix_eco> <gray>Валюта <green><bold><currency></bold></green> <gray>удалена."
+  already-exists: "<prefix_eco> <gray>Валюта <green><bold><currency></bold></green> <gray>уже существует."
+  not-found: "<prefix_eco> <gray>Валюта <green><bold><currency></bold></green> <gray>не существует."
+  config-protected: "<prefix_eco> <gray>Валюта <green><bold><currency></bold></green> <gray>определена в конфигурации и не может быть удалена здесь."
+  list-header: "<dark_aqua>── <aqua>Валюты</aqua> ──"
+  list-entry: "<dark_gray> • <green><bold><name></bold></green> <dark_gray>(<gray><display></gray><dark_gray>)"
+  list-empty: "<prefix_eco> <gray>Валюты не определены."
+
+# ── Pay ───────────────────────────────────────────────────────────────────────
+pay:
+  sent: "<prefix_eco> <gray>Отправлено <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>игроку <green><bold><player></bold></green><gray>."
+  received: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>отправил вам <green><bold><amount></bold></green> <green><bold><currency></bold></green><gray>."
+  insufficient-funds: "<prefix_eco> <gray>У вас недостаточно <green><bold><currency></bold></green><gray>."
+  self-pay: "<prefix_eco> <gray>Вы не можете платить самому себе."
+  min-amount: "<prefix_eco> <gray>Минимальный платёж составляет <green><bold><amount></bold></green><gray>."
+  tax-info: "<prefix_eco> <gray>(С вашего платежа удержан налог <green><bold><tax></bold></green><gray>.)"
+
+# ── Baltop ────────────────────────────────────────────────────────────────────
+baltop:
+  header: "<dark_aqua>── <aqua>Топ балансов</aqua> · <green><bold><currency></bold></green> <dark_aqua>──"
+  entry: "<dark_gray> <rank>. <green><bold><player></bold></green> <dark_gray>— <green><bold><amount></bold></green>"
+  footer: "<dark_aqua>── <gray>Страница <green><bold><page></bold></green><gray>/<green><bold><pages></bold></green> <dark_aqua>──"
+  empty: "<prefix_eco> <gray>Нет данных о балансах для <green><bold><currency></bold></green><gray>."
+  invalid-page: "<prefix_eco> <gray>Неверный номер страницы."

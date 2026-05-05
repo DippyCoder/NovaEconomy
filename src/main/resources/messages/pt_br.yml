@@ -1,0 +1,57 @@
+prefix:
+  eco: "<dark_gray>[<gold>⚡</gold><dark_gray>]<reset>"
+
+# ── General ───────────────────────────────────────────────────────────────────
+general:
+  no-permission: "<prefix_eco> <gray>Você não tem permissão para fazer isso."
+  player-only: "<prefix_eco> <gray>Apenas jogadores podem usar este comando."
+  player-not-found: "<prefix_eco> <gray>Jogador <green><bold><player></bold></green> <gray>não encontrado."
+  invalid-number: "<prefix_eco> <gray><green><bold><value></bold></green> <gray>não é um número válido."
+  invalid-args: "<prefix_eco> <gray>Uso: <green><bold><usage></bold></green>"
+  command-disabled: "<prefix_eco> <gray>Este comando está desabilitado no momento."
+  reload-done: "<prefix_eco> <gray>Plugin recarregado com sucesso."
+
+novaeco:
+  check-enabled: "<prefix_eco> <gray>Verificação de atualização <green><bold>ativada</bold></green><gray>."
+  check-disabled: "<prefix_eco> <gray>Verificação de atualização <green><bold>desativada</bold></green><gray>."
+
+# ── Balance ───────────────────────────────────────────────────────────────────
+balance:
+  own: "<prefix_eco> <gray>Seu saldo em <green><bold><currency></bold></green><gray>: <green><bold><amount></bold></green><gray>."
+  other: "<prefix_eco> <gray>Saldo de <green><bold><currency></bold></green> <gray>de <green><bold><player></bold></green><gray>: <green><bold><amount></bold></green><gray>."
+
+# ── Economy Admin ─────────────────────────────────────────────────────────────
+eco:
+  set: "<prefix_eco> <gray>O saldo de <green><bold><currency></bold></green> <gray>de <green><bold><player></bold></green> <gray>foi definido para <green><bold><amount></bold></green><gray>."
+  give: "<prefix_eco> <gray><green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>doado(s) a <green><bold><player></bold></green><gray>."
+  take: "<prefix_eco> <gray><green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>retirado(s) de <green><bold><player></bold></green><gray>."
+  reset: "<prefix_eco> <gray>O saldo de <green><bold><currency></bold></green> <gray>de <green><bold><player></bold></green> <gray>foi redefinido para o padrão."
+  max-balance: "<prefix_eco> <gray>Esse valor excederia o saldo máximo de <green><bold><currency></bold></green><gray>."
+
+# ── Currency ──────────────────────────────────────────────────────────────────
+currency:
+  added: "<prefix_eco> <gray>A moeda <green><bold><currency></bold></green> <gray>foi criada."
+  removed: "<prefix_eco> <gray>A moeda <green><bold><currency></bold></green> <gray>foi removida."
+  already-exists: "<prefix_eco> <gray>A moeda <green><bold><currency></bold></green> <gray>já existe."
+  not-found: "<prefix_eco> <gray>A moeda <green><bold><currency></bold></green> <gray>não existe."
+  config-protected: "<prefix_eco> <gray>A moeda <green><bold><currency></bold></green> <gray>está definida na configuração e não pode ser removida aqui."
+  list-header: "<dark_aqua>── <aqua>Moedas</aqua> ──"
+  list-entry: "<dark_gray> • <green><bold><name></bold></green> <dark_gray>(<gray><display></gray><dark_gray>)"
+  list-empty: "<prefix_eco> <gray>Nenhuma moeda definida."
+
+# ── Pay ───────────────────────────────────────────────────────────────────────
+pay:
+  sent: "<prefix_eco> <gray><green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>enviado(s) a <green><bold><player></bold></green><gray>."
+  received: "<prefix_eco> <gray><green><bold><player></bold></green> <gray>enviou <green><bold><amount></bold></green> <green><bold><currency></bold></green> <gray>para você."
+  insufficient-funds: "<prefix_eco> <gray>Você não tem <green><bold><currency></bold></green> <gray>suficiente."
+  self-pay: "<prefix_eco> <gray>Você não pode pagar a si mesmo."
+  min-amount: "<prefix_eco> <gray>O pagamento mínimo é <green><bold><amount></bold></green><gray>."
+  tax-info: "<prefix_eco> <gray>(Uma taxa de <green><bold><tax></bold></green> <gray>foi deduzida do seu pagamento.)"
+
+# ── Baltop ────────────────────────────────────────────────────────────────────
+baltop:
+  header: "<dark_aqua>── <aqua>Maiores Saldos</aqua> · <green><bold><currency></bold></green> <dark_aqua>──"
+  entry: "<dark_gray> <rank>. <green><bold><player></bold></green> <dark_gray>— <green><bold><amount></bold></green>"
+  footer: "<dark_aqua>── <gray>Página <green><bold><page></bold></green><gray>/<green><bold><pages></bold></green> <dark_aqua>──"
+  empty: "<prefix_eco> <gray>Nenhum dado de saldo para <green><bold><currency></bold></green><gray>."
+  invalid-page: "<prefix_eco> <gray>Número de página inválido."

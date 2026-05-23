@@ -14,6 +14,7 @@ import com.dippycoder.novaEconomy.vault.VaultEconomyHook;
 import com.dippycoder.novaEconomy.vault.VaultUnlockedEconomyHook;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.command.PluginCommand;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -66,8 +67,19 @@ public final class NovaEconomy extends JavaPlugin {
     private void registerVault() {
         VaultMode mode = configManager.getVaultMode();
 
+        // VaultUnlocked 2.x registers itself under the plugin name "Vault" (no separate VaultUnlocked plugin).
+        // Detect modern vault2 support by checking whether vault2.Economy is loadable from Vault's classloader.
+        Plugin vaultPlugin = getServer().getPluginManager().getPlugin("Vault");
+        boolean hasVault2 = false;
+        if (vaultPlugin != null) {
+            try {
+                vaultPlugin.getClass().getClassLoader().loadClass("net.milkbowl.vault2.economy.Economy");
+                hasVault2 = true;
+            } catch (ClassNotFoundException ignored) {}
+        }
+
         if (mode == VaultMode.VAULT || mode == VaultMode.BOTH) {
-            if (getServer().getPluginManager().getPlugin("Vault") != null) {
+            if (vaultPlugin != null) {
                 getServer().getServicesManager().register(
                         Economy.class,
                         new VaultEconomyHook(this),
@@ -81,16 +93,35 @@ public final class NovaEconomy extends JavaPlugin {
         }
 
         if (mode == VaultMode.VAULT_UNLOCKED || mode == VaultMode.BOTH) {
-            if (getServer().getPluginManager().getPlugin("VaultUnlocked") != null) {
-                getServer().getServicesManager().register(
-                        net.milkbowl.vault2.economy.Economy.class,
-                        new VaultUnlockedEconomyHook(this),
-                        this,
-                        ServicePriority.Normal
-                );
-                getLogger().info("Registered VaultUnlocked economy provider (multi-currency).");
+            if (vaultPlugin != null && hasVault2) {
+                if (getServer().getServicesManager().getRegistration(Economy.class) == null) {
+                    getServer().getServicesManager().register(
+                            Economy.class,
+                            new VaultEconomyHook(this),
+                            this,
+                            ServicePriority.Normal
+                    );
+                }
+                try {
+                    @SuppressWarnings("unchecked")
+                    Class<net.milkbowl.vault2.economy.Economy> vault2Class =
+                            (Class<net.milkbowl.vault2.economy.Economy>)
+                            vaultPlugin.getClass().getClassLoader()
+                                    .loadClass("net.milkbowl.vault2.economy.Economy");
+                    getServer().getServicesManager().register(
+                            vault2Class,
+                            new VaultUnlockedEconomyHook(this),
+                            this,
+                            ServicePriority.Normal
+                    );
+                    getLogger().info("Registered VaultUnlocked economy provider (multi-currency).");
+                } catch (ClassNotFoundException e) {
+                    getLogger().severe("vault2 Economy class not found — skipping VaultUnlocked economy registration.");
+                }
+            } else if (vaultPlugin == null) {
+                getLogger().warning("Vault not found — skipping VaultUnlocked economy registration.");
             } else {
-                getLogger().warning("VaultUnlocked not found — skipping VaultUnlocked economy registration.");
+                getLogger().warning("Installed Vault does not support vault2 — skipping VaultUnlocked economy registration.");
             }
         }
     }
